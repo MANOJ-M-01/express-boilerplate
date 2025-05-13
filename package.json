@@ -1,0 +1,42 @@
+{
+  "name": "express-boilerplate",
+  "version": "0.0.0",
+  "description": "express boilerplate",
+  "main": "src/server.ts",
+  "license": "MIT",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --poll --transpile-only src/server.ts",
+    "start": "ts-node src/server.ts",
+    "build": "tsc",
+    "serve": "node src/server.js",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "prettier:check": "npx prettier . --check",
+    "prettier:format": "npx prettier . --write"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.1.0",
+    "morgan": "^1.10.0",
+    "winston": "^3.17.0",
+    "winston-daily-rotate-file": "^5.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.26.0",
+    "@types/cookie-parser": "^1.4.8",
+    "@types/cors": "^2.8.18",
+    "@types/express": "^5.0.1",
+    "@types/morgan": "^1.9.9",
+    "@types/node": "^22.15.17",
+    "eslint": "^9.26.0",
+    "eslint-config-prettier": "^10.1.5",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "tsc": "^2.0.4",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.32.1"
+  }
+}

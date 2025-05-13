@@ -1,0 +1,37 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: api
+    volumes:
+      - .:/app # Mounts the local directory into the container
+      - /app/node_modules # Prevents overwriting node_modules
+    environment:
+      - NODE_ENV=development
+      - PORT=4000
+      - ENABLE_HTTP_LOG=true
+    networks:
+      - api_network
+    ports:
+      - '4000:4000'
+    # command: >
+    #   sh -c "yarn build && yarn dev"
+    # deploy:
+    #   replicas: 3 # Create 3 instances
+    #   update_config:
+    #     parallelism: 1 # Update one replica at a time (rolling updates)
+    #     delay: 5s # Wait 5s before updating the next replica
+    #     order: start-first # Ensures the new container starts before stopping the old one
+    # healthcheck:
+    #   test: ["CMD", "curl", "-f", "http://localhost:4000/"]
+    #   interval: 30s
+    #   timeout: 5s
+    #   retries: 3
+
+volumes:
+  db-data:
+
+networks:
+  api_network:
+    driver: bridge
