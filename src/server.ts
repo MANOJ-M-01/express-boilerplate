@@ -1,7 +1,7 @@
-import config from './config';
+import { env } from './env';
 import app from './app';
 import logger from './utils/logger';
 
-app.listen(config.PORT, () => {
-  logger.info(`Server running on port ${config.PORT}`);
+app.listen(env.PORT, () => {
+  logger.info(`Server running on port ${env.PORT}`);
 });

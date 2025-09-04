@@ -1,24 +1,52 @@
 {
   "compilerOptions": {
-    "target": "es2016",
-    "baseUrl": "./",
-    "module": "CommonJS",
-    "moduleResolution": "node10",
     "paths": {
       "@/*": ["./src/*"]
     },
     "typeRoots": ["./node_modules/@types"],
-    "types": ["node"],
-    "strict": true,
+
+    /* File Layout */
+    "rootDir": "./src",
     "outDir": "./dist",
-    "skipLibCheck": true,
+
+    /* Module & Target - Use ESNext instead of NodeNext */
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "target": "ES2022",
+    "lib": ["ES2022"],
+    "types": ["node"],
+
     "resolveJsonModule": true,
+
+    /* ES Module Interop */
     "esModuleInterop": true,
-    "removeComments": true
+    "allowSyntheticDefaultImports": true,
+
+    /* Output */
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+
+    /* Strictness */
+    "strict": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noPropertyAccessFromIndexSignature": true,
+
+    /* Modern TypeScript Options */
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitOverride": true,
+    "isolatedModules": true,
+
+    /* Performance */
+    "skipLibCheck": true
   },
   "tsc-alias": {
     "resolveFullPaths": true
   },
-  "include": ["src"],
+  "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
 }
