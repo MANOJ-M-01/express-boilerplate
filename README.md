@@ -17,7 +17,7 @@ A production-ready Express.js boilerplate using TypeScript, ESLint, Prettier, Do
 
 ## Requirements
 
-- Node v23.11.0
+- Node v22.18.0
 - Docker
 
 ## 🚀 Getting Started
